@@ -1,4 +1,4 @@
-#./env/Scripts/python
+#!.env/Scripts/python
 from selenium import webdriver
 from rich.prompt import Prompt, PromptBase
 from rich import print
@@ -53,16 +53,16 @@ def main():
         banner()
         nick_gen()
     else:
-        print(pyfiglet.Figlet("smslant").renderText("Exit"))
+        print("[bold red]" + pyfiglet.Figlet("smslant").renderText("Exit") + "[/bold red]")
         exit()
 
 try:
     main()
 except KeyboardInterrupt:
-    yes_no = Prompt.ask("\n  [[bold yellow]![/bold yellow]] Покинуть", choices=["да", "нет"])
+    yes_no = Prompt.ask("\n  [bold white][[bold yellow]![/bold yellow]][/bold white] Покинуть", choices=["да", "нет"])
 
     if yes_no == "да":
-        print(pyfiglet.Figlet("smslant").renderText("Exit"))
+        print("[bold red]" + pyfiglet.Figlet("smslant").renderText("Exit") + "[/bold red]")
         exit()
     else:
         main()
